@@ -29,7 +29,12 @@ describe("Adding staff", () => {
         password: "testPassword",
       },
     }).then((res) => {
+      console.log(res.body);
       expect(res.status).to.equal(201);
+      // Assert that the response body contains a success message (adjust based on actual response structure)
+      expect(res.body).to.have.property("message", "Staff add succeed");
+      const staffId = res.body.data.staff.user.id;
+      cy.writeFile("cypress/fixtures/staffId.json", { AdminStaffId: staffId });
     });
   });
 });
