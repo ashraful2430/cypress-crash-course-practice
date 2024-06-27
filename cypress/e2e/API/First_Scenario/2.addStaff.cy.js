@@ -29,8 +29,7 @@ describe("Adding staff", () => {
         password: "testPassword",
       },
     }).then((res) => {
-      const newStaffId = res.body.data.staff._id;
-      cy.writeFile("cypress/fixtures/staffId.json", { staffId: newStaffId });
+      expect(res.status).to.equal(201);
     });
   });
 });
