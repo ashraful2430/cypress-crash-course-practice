@@ -26,7 +26,9 @@ describe("Search user and send friend request", () => {
 
     // click on the cancel the friend request button
     cy.wait(2000);
-    cy.get(".btn-light").click();
+    cy.get(
+      "body > div:nth-child(16) > div:nth-child(3) > div > div.search_main > div.grid.grid-cols-3.grid-cols-3-responsive.grid-gap-30.px-30.pb-30 > div:nth-child(1) > div.mantine-Card-cardSection.card-section.mantine-1erl7ew > div.card-footer > div.mantine-Group-root.card-group.mantine-1wnd7ie > div:nth-child(2) > button"
+    ).click();
 
     // click on okay button
     cy.get(".reminder-box > :nth-child(2) > :nth-child(2) > .btn-fill").click();

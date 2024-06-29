@@ -21,7 +21,7 @@ describe("Friend request invitation", () => {
       },
     }).then((res) => {
       console.log(res.body);
-      expect(res.message).to.equal("Succeed");
+      expect(res.body.message).to.equal("Succeed");
       const updatedFriend = res.body.data._id;
       cy.writeFile("cypress/fixtures/updatedFriend.json", {
         updatedFriend: updatedFriend,
