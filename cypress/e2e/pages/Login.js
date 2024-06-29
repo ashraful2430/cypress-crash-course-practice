@@ -2,6 +2,7 @@ class Login {
   //   login to the website
   loginToTheWebsite() {
     cy.visit("https://staging.biyekorun.us/");
+    cy.wait(5000);
 
     // Clicking on the login button
     cy.get(".flex-gap-15 > .primary-btn-v3").click();
